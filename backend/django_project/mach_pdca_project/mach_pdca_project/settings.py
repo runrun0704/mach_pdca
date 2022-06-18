@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mach_pdca_app.apps.MachPdcaAppConfig'
 ]
 
 MIDDLEWARE = [
