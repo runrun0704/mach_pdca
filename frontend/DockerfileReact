@@ -1,4 +1,4 @@
 FROM node:14
-RUN mkdir /code
-WORKDIR /code
-COPY . /code/
+RUN mkdir /code_
+WORKDIR /code_
+COPY . /code_/
