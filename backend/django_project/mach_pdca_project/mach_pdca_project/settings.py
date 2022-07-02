@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mach_pdca_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/'mach_pdca_project'/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
