@@ -5,11 +5,14 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    {% block customcss %}
+    <link href="{% static 'home.css' %}" rel="stylesheet">
+    {% endblock customcss %}
     <title>React</title>
 </head>
 <body>
     <div>
-        <h4>ヤッホー</h4>
+        <h4 class = 'demo'>ヤッホー</h4>
     </div>
 </body>
 </html>
