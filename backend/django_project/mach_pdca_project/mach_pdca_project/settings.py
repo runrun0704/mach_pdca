@@ -56,7 +56,7 @@ ROOT_URLCONF = 'mach_pdca_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'mach_pdca_project'/'templates'],
+        'DIRS': [BASE_DIR/'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,8 +117,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = './mach_pdca_app/static/'
-STATIC_FILES_DIRS = [str(BASE_DIR/'mach_pdca_app'/'static')]
+STATIC_URL = '/staticfiles/'
+STATIC_FILES_DIRS = [str(BASE_DIR/'staticfiles')]
 STATIC_ROOT = BASE_DIR/'staticfiles'
 
 # Default primary key field type
