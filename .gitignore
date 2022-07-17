@@ -1,2 +1,3 @@
 *.pdf
 *.pyc
+/backend/django/mach_pdca_project/staticfiles/admin/
