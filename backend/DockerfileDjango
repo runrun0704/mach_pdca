@@ -16,4 +16,6 @@ RUN pip install markdown
 
 RUN pip install django-filter
 
+RUN pip install django-cors-headers
+
 COPY . /code_/
