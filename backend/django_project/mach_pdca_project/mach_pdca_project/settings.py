@@ -70,8 +70,9 @@ TEMPLATES = [
         },
     },
 ]
+
 #'CORS_ALLOWED_WHITELIST'の可能性有り
-CORS_ALLOWED_ORIGINS = [
+CORS_ALLOWED_WHITELIST = [
     'http://127.0.0.1:3000',
     'http://localhost:3000',
 ]

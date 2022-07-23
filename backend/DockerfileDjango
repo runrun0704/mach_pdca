@@ -1,4 +1,4 @@
-FROM python:3
+FROM python:3.8
 
 ENV PYTHONUNBUFFERED 1
 
@@ -16,6 +16,6 @@ RUN pip install markdown
 
 RUN pip install django-filter
 
-RUN pip install django-cors-headers
+RUN pip install django-cors-headers==3.2
 
 COPY . /code_/
