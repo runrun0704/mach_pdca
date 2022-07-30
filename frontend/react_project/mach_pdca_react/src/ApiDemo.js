@@ -15,7 +15,16 @@ function ApiDemo() {
     return(
         <div>
             <h2>APIのdemoを表示したい</h2>
-            <p>{pdca.p}</p>
+            <div>
+                {pdca.map(item => (
+                    <div>
+                        <p>{item.p}</p>
+                        <p>{item.d}</p>
+                        <p>{item.c}</p>
+                        <p>{item.a}</p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
     
