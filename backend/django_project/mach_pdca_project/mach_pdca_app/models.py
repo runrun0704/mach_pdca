@@ -12,13 +12,19 @@ class User(models.Model):
 class Condition(models.Model):
     id = models.AutoField(primary_key = True)
     pdca_id = models.IntegerField()
-    condition = models.IntegerField(validators = [MinValueValidator(0),MaxValueValidator(2)])
+    condition = models.IntegerField(validators = [MinValueValidator(0),MaxValueValidator(2)],null = True, blank = True)
+
+    def __str__(self):
+        return self.condition
 
 class Tag(models.Model):
     id = models.AutoField(primary_key = True)
     created = models.DateTimeField(auto_now = True)
     pdca_id = models.IntegerField()
-    name = models.CharField(max_length = 20)
+    name = models.CharField(max_length = 20, null = True, blank = True)
+
+    def __str__(self):
+        return self.name
 
 class PdcaModel(models.Model):
     id = models.AutoField(primary_key = True)
@@ -34,3 +40,5 @@ class PdcaModel(models.Model):
     a = models.TextField(null = True)
     weight = models.IntegerField(validators = [MinValueValidator(0),MaxValueValidator(2)])
     comment = models.TextField(null = True)
+    condition = models.ForeignKey(Condition, on_delete = models.CASCADE ,blank = True ,default = "", null = True)
+    tag_name = models.ManyToManyField(Tag, blank = True, default = "", null = True)
