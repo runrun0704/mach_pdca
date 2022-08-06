@@ -9,10 +9,16 @@ class User(models.Model):
     name = models.CharField(max_length = 50)
     password = models.CharField(max_length = 10,blank=True, null=True,validators=[MinValueValidator(4)])
 
+CONDITION = (
+    (1, 'Preparation'),
+    (2, 'Open'),
+    (3, 'Close')
+)
+
 class Condition(models.Model):
     id = models.AutoField(primary_key = True)
     pdca_id = models.IntegerField()
-    condition = models.IntegerField(validators = [MinValueValidator(0),MaxValueValidator(2)],null = True, blank = True)
+    condition = models.IntegerField(choices = CONDITION,null = True, blank = True)
 
     def __str__(self):
         return self.condition
