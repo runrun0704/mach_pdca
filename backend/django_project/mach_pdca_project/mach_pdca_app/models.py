@@ -26,6 +26,12 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+LEVEL = (
+    (1, 'Light'),
+    (2, 'Middle'),
+    (3, 'Heavy')
+)
+
 class PdcaModel(models.Model):
     id = models.AutoField(primary_key = True)
     created = models.DateTimeField(auto_now = True)
@@ -38,7 +44,7 @@ class PdcaModel(models.Model):
     d = models.TextField(null = True)
     c = models.TextField(null = True)
     a = models.TextField(null = True)
-    weight = models.IntegerField(validators = [MinValueValidator(0),MaxValueValidator(2)])
+    weight = models.IntegerField(choices = LEVEL, null = True)
     comment = models.TextField(null = True)
     condition = models.ForeignKey(Condition, on_delete = models.CASCADE ,blank = True ,default = "", null = True)
     tag_name = models.ManyToManyField(Tag, blank = True, default = "", null = True)
