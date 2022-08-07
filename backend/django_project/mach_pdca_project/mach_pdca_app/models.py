@@ -7,7 +7,7 @@ class User(models.Model):
     created = models.DateTimeField(auto_now = True)
     updated = models.DateTimeField(auto_now_add = True)
     name = models.CharField(max_length = 50)
-    password = models.CharField(max_length = 10,blank=True, null=True,validators=[MinValueValidator(4)])
+    password = models.CharField(max_length = 10,blank=True, null=True)
 
 CONDITION = (
     (1, 'Preparation'),
@@ -21,7 +21,7 @@ class Condition(models.Model):
     condition = models.IntegerField(choices = CONDITION,null = True, blank = True)
 
     def __str__(self):
-        return self.condition
+        return str(self.condition)
 
 class Tag(models.Model):
     id = models.AutoField(primary_key = True)
