@@ -45,7 +45,7 @@ class PdcaModel(models.Model):
     updated = models.DateTimeField(auto_now_add = True)
     title = models.CharField(max_length = 20)
     goal = models.CharField(max_length = 20)
-    Memo = models.TextField(null = True)
+    memo = models.TextField(null = True)
     deadline = models.DateField()
     p = models.TextField()
     d = models.TextField(null = True)

@@ -22,6 +22,16 @@ function ApiDemo() {
                         <p>{item.d}</p>
                         <p>{item.c}</p>
                         <p>{item.a}</p>
+                        <p>{item.title}</p>
+                        <p>{item.goal}</p>
+                        <p>{item.weight}</p>
+                        <p>{item.comment}</p>
+                        <p>{item.condition}</p>
+                        <p>{item.tag_name}</p>
+                        <p>{item.user_name}</p>
+                        <p>{item.created}</p>
+                        <p>{item.updated}</p>
+                        <h3>〆</h3>
                     </div>
                 ))}
             </div>

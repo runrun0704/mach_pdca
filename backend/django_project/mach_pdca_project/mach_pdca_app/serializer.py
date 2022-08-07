@@ -4,7 +4,7 @@ from .models import PdcaModel,User,Condition,Tag
 class PdcaModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = PdcaModel
-        fields = ('p','d','c','a')
+        fields = ('p','d','c','a','title','goal','deadline','weight','comment','condition','tag_name','user_name','created','updated')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
