@@ -17,7 +17,6 @@ CONDITION = (
 
 class Condition(models.Model):
     id = models.AutoField(primary_key = True)
-    pdca_id = models.IntegerField()
     condition = models.IntegerField(choices = CONDITION,null = True, blank = True)
 
     def __str__(self):
@@ -26,7 +25,6 @@ class Condition(models.Model):
 class Tag(models.Model):
     id = models.AutoField(primary_key = True)
     created = models.DateTimeField(auto_now = True)
-    pdca_id = models.IntegerField()
     name = models.CharField(max_length = 20, null = True, blank = True)
 
     def __str__(self):
