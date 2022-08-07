@@ -6,8 +6,11 @@ class User(models.Model):
     id = models.AutoField(primary_key = True)
     created = models.DateTimeField(auto_now = True)
     updated = models.DateTimeField(auto_now_add = True)
-    name = models.CharField(max_length = 50)
+    name = models.CharField(max_length = 50, blank = True , null = True)
     password = models.CharField(max_length = 10,blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 CONDITION = (
     (1, 'Preparation'),
@@ -52,3 +55,4 @@ class PdcaModel(models.Model):
     comment = models.TextField(null = True)
     condition = models.ForeignKey(Condition, on_delete = models.CASCADE ,blank = True ,default = "", null = True)
     tag_name = models.ManyToManyField(Tag, blank = True, default = "", null = True)
+    user_name = models.ForeignKey(User, on_delete = models.CASCADE, blank = True, default = "", null = True)
