@@ -6,6 +6,8 @@ function ApiDemo() {
     const [pdca,setPdcaes] = useState([])
 
     useEffect(() => {
+        //POSTメソッドでフォームを作成可能な気がする。
+        //GETメソッドでデータを取得して変数に代入。その後POSTメソッドでデータを加工する。
         axios.get('http://localhost:8000/api/pdcaes')
         .then(res => {
             setPdcaes(res.data)
