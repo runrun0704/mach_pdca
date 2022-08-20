@@ -8,11 +8,20 @@ function ApiPost() {
     useEffect(() => {
         //POSTメソッドでフォームを作成可能な気がする。
         //GETメソッドでデータを取得して変数に代入。その後POSTメソッドでデータを加工する。
-        axios.post('http://localhost:8000/api/pdcaes',{
-            p:"test"
+        axios.post('http://localhost:8000/api/pdcaes/',{
+            //URLの最後に"/"を入れるとPOSTメソッドが通った。
+            id:4,
+            title:"post_test_2",
+            goal:"post_test_2",
+            p:"post_test_2",
+            weight:2,
+            deadline:"2022-07-19"
         })
         .then(res => {
             setPdcaes(res.data)
+        })
+        .catch(function(error){
+            console.log(error)
         })
     }, [])
 
