@@ -2,7 +2,11 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
-function ApiPost() {
+function ApiPost() { 
+    const [has, setHas] = useState({
+        hasError:false
+    })
+
     const [pdca,setPdcaes] = useState({
         title:"",
         goal:"",
@@ -13,9 +17,11 @@ function ApiPost() {
 
     const handleChange = (e) =>{
         const value = e.target.value;
+        const isEmpty = value==='';
         setPdcaes({
             ...pdca,
-            [e.target.name]: value
+            [e.target.name]: value,
+            hasError:isEmpty
         })
     }
 
@@ -35,6 +41,13 @@ function ApiPost() {
         .catch(function(error){
             console.log(error)
         })
+    }
+
+    let hasErrorText;
+    if (has.hasError){
+        hasErrorText = (
+            <p>入力してください</p>
+        )
     }
     /* 
     import React, { useState } from "react";
@@ -120,6 +133,7 @@ function ApiPost() {
             <h1>ApiPost</h1>
             <form onSubmit={handleSubmit}>
                 <li htmlFor="title">
+                {hasErrorText}
                 Title
                 <input
                     type="title"
