@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 
-function ApiDemo() {
+function ApiGet() {
     const [pdca,setPdcaes] = useState([])
 
     useEffect(() => {
@@ -14,10 +14,11 @@ function ApiDemo() {
 
     return(
         <div>
-            <h2>APIのdemoを表示したい</h2>
+            <h2>Api_get</h2>
             <div>
                 {pdca.map(item => (
                     <div>
+                        <p>{item.id}</p>
                         <p>{item.p}</p>
                         <p>{item.d}</p>
                         <p>{item.c}</p>
@@ -39,4 +40,4 @@ function ApiDemo() {
     )
     
 }
-export default ApiDemo;
+export default ApiGet;
