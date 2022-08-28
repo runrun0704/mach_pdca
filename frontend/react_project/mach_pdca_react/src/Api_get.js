@@ -20,6 +20,7 @@ function ApiGet() {
             <div>
                 {pdca.map(item => (
                     <div>
+                        <p>{item.id}</p>
                         <p>{item.p}</p>
                         <p>{item.d}</p>
                         <p>{item.c}</p>
