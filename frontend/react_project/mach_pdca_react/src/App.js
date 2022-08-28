@@ -3,6 +3,7 @@ import './App.css';
 import ApiGet from './Api_get'
 import ApiPost from './Api_post'
 import ApiPut from './Api _put'
+import ApiDelete from './Api＿delete'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <ApiGet />
       <ApiPost />
       <ApiPut />
+      <ApiDelete />
     </div>
   );
 }
