@@ -14,7 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<ApiGet />}/>
+          <Route path="/pdca/post" element={<ApiPost/>} />
           <Route path="/pdca/:id" element={<ApiDetail/>}/>
+          <Route path="/pdca/:id/update" element={<ApiPut/>} />
+          <Route path="/pdca/:id/delete" element={<ApiDelete/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
