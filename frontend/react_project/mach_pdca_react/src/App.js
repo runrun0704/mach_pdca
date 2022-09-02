@@ -4,16 +4,24 @@ import ApiGet from './Api_get'
 import ApiPost from './Api_post'
 import ApiPut from './Api _put'
 import ApiDelete from './Api＿delete'
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <ApiGet />
-      <ApiPost />
-      <ApiPut />
-      <ApiDelete />
+      <BrowserRouter>
+        <Routes>
+          <Route  exact path="/" element={<ApiGet />}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+/* 
+<ApiPost />
+<ApiPut />
+<ApiDelete />
+*/
