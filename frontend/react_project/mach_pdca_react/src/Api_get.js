@@ -25,7 +25,7 @@ function ApiGet() {
             <div>
                 {pdca.map(item => (
                     <div>
-                        <Link 
+                        <Link
                             to={`/pdca/${item.id}`}
                             key={item.id}
                         >
@@ -50,6 +50,6 @@ function ApiGet() {
             </div>
         </div>
     )
-    
+
 }
 export default ApiGet;

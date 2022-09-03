@@ -26,9 +26,3 @@ function App() {
 }
 
 export default App;
-
-/* 
-<ApiPost />
-<ApiPut />
-<ApiDelete />
-*/

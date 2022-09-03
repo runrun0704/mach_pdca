@@ -16,7 +16,7 @@ function ApiPost() {
         weight:"",
         deadline:""
     })
-    
+
 
     const handleChange = (e) =>{
         const value = e.target.value;
@@ -48,7 +48,7 @@ function ApiPost() {
         navigate('/');
     }
 
-    
+
     /*
     let hasErrorText;
     if (has.hasError){
@@ -111,6 +111,6 @@ function ApiPost() {
             </form>
         </div>
     )
-    
+
 }
 export default ApiPost;

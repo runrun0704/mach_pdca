@@ -31,10 +31,11 @@ function ApiDetail(){
                 <p>{pdca.user_name}</p>
                 <p>{pdca.created}</p>
                 <p>{pdca.updated}</p>
-                
+
             </div>
             <div>
                 <NavLink to={`/pdca/${id}/update`}>更新</NavLink>
+                <NavLink to={`/pdca/${id}/delete`}>削除</NavLink>
                 <NavLink to={'/'}>戻る</NavLink>
             </div>
         </div>
