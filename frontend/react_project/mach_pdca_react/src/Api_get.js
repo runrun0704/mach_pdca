@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import {Link, Routes,Route} from 'react-router-dom';
+import ApiPost from './Api_post'
 import axios from 'axios';
 
 
@@ -16,9 +18,19 @@ function ApiGet() {
         <div>
             <h2>Api_get</h2>
             <div>
+                <ul>
+                    <li><Link to='pdca/post'>New PDCA!</Link></li>
+                </ul>
+            </div>
+            <div>
                 {pdca.map(item => (
                     <div>
-                        <p>{item.id}</p>
+                        <Link
+                            to={`/pdca/${item.id}`}
+                            key={item.id}
+                        >
+                            {item.id}
+                        </Link>
                         <p>{item.p}</p>
                         <p>{item.d}</p>
                         <p>{item.c}</p>
@@ -38,6 +50,6 @@ function ApiGet() {
             </div>
         </div>
     )
-    
+
 }
 export default ApiGet;

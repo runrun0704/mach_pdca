@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {useNavigate} from "react-router-dom";
 
 
 function ApiPost() {
@@ -15,7 +16,7 @@ function ApiPost() {
         weight:"",
         deadline:""
     })
-    
+
 
     const handleChange = (e) =>{
         const value = e.target.value;
@@ -26,6 +27,7 @@ function ApiPost() {
             //hasError:isEmpty
         })
     }
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -42,8 +44,10 @@ function ApiPost() {
         })
         .catch(function(error){
             console.log(error)
-        })
+        });
+        navigate('/');
     }
+
 
     /*
     let hasErrorText;
@@ -107,6 +111,6 @@ function ApiPost() {
             </form>
         </div>
     )
-    
+
 }
 export default ApiPost;
