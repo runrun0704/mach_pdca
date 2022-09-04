@@ -31,14 +31,15 @@ function ApiPost() {
             weight: pdca.weight,
             deadline: pdca.deadline
         };
-        axios.post(`${baseURL}`,pdcaData)
+        axios.post(`${baseURL}/`,pdcaData)
         .then(res => {
             setPdcaes(res.data)
+            navigate('/');
         })
         .catch(function(error){
             console.log(error)
         });
-        navigate('/');
+
     }
 
     return(
@@ -90,7 +91,7 @@ function ApiPost() {
                     onChange={handleChange}
                 />
                 </li>
-                <button type="submit">Update</button>
+                <button type="submit">Create</button>
             </form>
         </div>
     )
