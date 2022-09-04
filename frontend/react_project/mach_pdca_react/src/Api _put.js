@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-
+import {useNavigate, useParams} from 'react-router-dom';
+import {baseURL} from './baseURL';
 
 function ApiPut() {
+    const {id} = useParams();
+
     const [pdca,setPdcaes] = useState({
         title:"",
         goal:"",
@@ -18,7 +21,7 @@ function ApiPut() {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/pdcaes/1')
+        axios.get(`${baseURL}/${id}`)
         .then(res => {
             setPdcaes(res.data)
         })
@@ -32,6 +35,7 @@ function ApiPut() {
         })
     }
 
+    const navigate = useNavigate();
 
     const handlePutSubmit = (e) => {
         e.preventDefault();
@@ -48,15 +52,16 @@ function ApiPut() {
             condition: pdca.condition,
             tag_name: pdca.tag_name
         };
-        axios.put('http://localhost:8000/api/pdcaes/1/',pdcaData)
+        axios.put(`${baseURL}/${id}/`,pdcaData)
         .then(res => {
             setPdcaes(res.data)
+            navigate(`/pdca/${id}`)
         })
         .catch(function(error){
             console.log(error)
         })
-    }
 
+    }
 
     return(
         <div>
@@ -89,29 +94,29 @@ function ApiPut() {
                     onChange={handleChange}
                 />
                 </li>
-                <li htmlFor="title">
+                <li htmlFor="d">
                 D
                 <input
-                    type="title"
-                    name="title"
+                    type="d"
+                    name="d"
                     value={pdca.d}
                     onChange={handleChange}
                 />
                 </li>
-                <li htmlFor="title">
+                <li htmlFor="c">
                 C
                 <input
-                    type="title"
-                    name="title"
+                    type="c"
+                    name="c"
                     value={pdca.c}
                     onChange={handleChange}
                 />
                 </li>
-                <li htmlFor="title">
+                <li htmlFor="a">
                 A
                 <input
-                    type="title"
-                    name="title"
+                    type="a"
+                    name="a"
                     value={pdca.a}
                     onChange={handleChange}
                 />
@@ -134,37 +139,37 @@ function ApiPut() {
                     onChange={handleChange}
                 />
                 </li>
-                <li htmlFor="title">
+                <li htmlFor="comment">
                 Comment
                 <input
-                    type="title"
-                    name="title"
+                    type="comment"
+                    name="comment"
                     value={pdca.comment}
                     onChange={handleChange}
                 />
                 </li>
-                <li htmlFor="title">
+                <li htmlFor="condition">
                 Condition
                 <input
-                    type="title"
-                    name="title"
+                    type="condition"
+                    name="condition"
                     value={pdca.condition}
                     onChange={handleChange}
                 />
                 </li>
-                <li htmlFor="title">
+                <li htmlFor="tag_name">
                 TagName
                 <input
-                    type="title"
-                    name="title"
+                    type="tag_name"
+                    name="tag_name"
                     value={pdca.tag_name}
                     onChange={handleChange}
                 />
                 </li>
-                <button type="submit">Submit</button>
+                <button type="submit">Create</button>
             </form>
         </div>
     )
-    
 }
+
 export default ApiPut;

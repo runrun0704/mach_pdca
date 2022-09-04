@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
-
+import {baseURL} from './baseURL';
 
 function ApiGet() {
     const [pdca,setPdcaes] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/pdcaes')
+        axios.get(`${baseURL}`)
         .then(res => {
             setPdcaes(res.data)
         })
@@ -16,9 +17,19 @@ function ApiGet() {
         <div>
             <h2>Api_get</h2>
             <div>
+                <ul>
+                    <li><Link to='pdca/post'>New PDCA!</Link></li>
+                </ul>
+            </div>
+            <div>
                 {pdca.map(item => (
                     <div>
-                        <p>{item.id}</p>
+                        <Link
+                            to={`/pdca/${item.id}`}
+                            key={item.id}
+                        >
+                            {item.id}
+                        </Link>
                         <p>{item.p}</p>
                         <p>{item.d}</p>
                         <p>{item.c}</p>
@@ -38,6 +49,6 @@ function ApiGet() {
             </div>
         </div>
     )
-    
 }
+
 export default ApiGet;
