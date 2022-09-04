@@ -14,7 +14,7 @@ function App() {
         <Routes>
           {/* Home */}
           <Route exact path="/" element={<ApiGet />}/>
-          {/* New */}
+          {/* Create */}
           <Route path="/pdca/post" element={<ApiPost/>} />
           {/* Detail */}
           <Route path="/pdca/:id" element={<ApiDetail/>}/>
