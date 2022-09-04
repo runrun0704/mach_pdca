@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useNavigate, useParams } from 'react-router-dom';
-
+import {baseURL} from './baseURL';
 
 function ApiDelete() {
-    const [pdca,setPdcaes] = useState({})
-
     const {id} = useParams();
 
+    const [pdca,setPdcaes] = useState({})
+
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/pdcaes/${id}`)
+        axios.get(`${baseURL}/${id}`)
         .then(res => {
             setPdcaes(res.data)
         })
@@ -18,7 +18,7 @@ function ApiDelete() {
     const navigate = useNavigate();
 
     function deletePdca(){
-        axios.delete(`http://localhost:8000/api/pdcaes/${id}/`)
+        axios.delete(`${baseURL}/${id}/`)
         .then(() => {
             alert("Pdca deleted!");
             setPdcaes(null)
@@ -35,6 +35,6 @@ function ApiDelete() {
             <button onClick={deletePdca}>Delete</button>
         </div>
     )
-
 }
+
 export default ApiDelete;

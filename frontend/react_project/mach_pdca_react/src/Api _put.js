@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {useNavigate, useParams} from 'react-router-dom';
-
+import {baseURL} from './baseURL';
 
 function ApiPut() {
+    const {id} = useParams();
+
     const [pdca,setPdcaes] = useState({
         title:"",
         goal:"",
@@ -18,10 +20,8 @@ function ApiPut() {
         tag_name:""
     })
 
-    const {id} = useParams();
-
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/pdcaes/${id}`)
+        axios.get(`${baseURL}/${id}`)
         .then(res => {
             setPdcaes(res.data)
         })
@@ -52,7 +52,7 @@ function ApiPut() {
             condition: pdca.condition,
             tag_name: pdca.tag_name
         };
-        axios.put(`http://localhost:8000/api/pdcaes/${id}/`,pdcaData)
+        axios.put(`${baseURL}/${id}/`,pdcaData)
         .then(res => {
             setPdcaes(res.data)
             navigate(`/pdca/${id}`)
@@ -62,7 +62,6 @@ function ApiPut() {
         })
 
     }
-
 
     return(
         <div>
@@ -167,10 +166,10 @@ function ApiPut() {
                     onChange={handleChange}
                 />
                 </li>
-                <button type="submit">Submit</button>
+                <button type="submit">Create</button>
             </form>
         </div>
     )
-
 }
+
 export default ApiPut;

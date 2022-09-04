@@ -1,6 +1,7 @@
 import {NavLink,useParams,} from 'react-router-dom';
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {baseURL} from './baseURL';
 
 function ApiDetail(){
     const {id} = useParams();
@@ -8,7 +9,7 @@ function ApiDetail(){
     const [pdca,setPdcaes] = useState([])
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/pdcaes/${id}`)
+        axios.get(`${baseURL}/${id}`)
         .then(res => {
             setPdcaes(res.data)
         })
@@ -34,9 +35,9 @@ function ApiDetail(){
 
             </div>
             <div>
-                <NavLink to={`/pdca/${id}/update`}>更新</NavLink>
-                <NavLink to={`/pdca/${id}/delete`}>削除</NavLink>
-                <NavLink to={'/'}>戻る</NavLink>
+                <NavLink to={`/pdca/${id}/update`}>Update</NavLink>
+                <NavLink to={`/pdca/${id}/delete`}>Delete</NavLink>
+                <NavLink to={'/'}>Back</NavLink>
             </div>
         </div>
     );
