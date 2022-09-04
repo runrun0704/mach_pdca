@@ -55,11 +55,12 @@ function ApiPut() {
         axios.put(`http://localhost:8000/api/pdcaes/${id}/`,pdcaData)
         .then(res => {
             setPdcaes(res.data)
+            navigate(`/pdca/${id}`)
         })
         .catch(function(error){
             console.log(error)
         })
-        navigate(`/pdca/${id}`)
+
     }
 
 
