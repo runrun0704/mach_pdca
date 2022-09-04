@@ -1,14 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 
 
 function ApiPost() {
-    /*
-    const [has, setHas] = useState({
-        hasError:false
-    })
-    */
     const [pdca,setPdcaes] = useState({
         title:"",
         goal:"",
@@ -20,13 +15,12 @@ function ApiPost() {
 
     const handleChange = (e) =>{
         const value = e.target.value;
-        //const isEmpty = value==='';
         setPdcaes({
             ...pdca,
             [e.target.name]: value,
-            //hasError:isEmpty
         })
     }
+
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -47,16 +41,6 @@ function ApiPost() {
         });
         navigate('/');
     }
-
-
-    /*
-    let hasErrorText;
-    if (has.hasError){
-        hasErrorText = (
-            <p>入力してください</p>
-        )
-    }
-    */
 
     return(
         <div>
