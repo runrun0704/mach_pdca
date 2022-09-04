@@ -12,7 +12,6 @@ function ApiPost() {
         deadline:""
     })
 
-
     const handleChange = (e) =>{
         const value = e.target.value;
         setPdcaes({
@@ -95,6 +94,6 @@ function ApiPost() {
             </form>
         </div>
     )
-
 }
+
 export default ApiPost;

@@ -37,7 +37,7 @@ function ApiDetail(){
             <div>
                 <NavLink to={`/pdca/${id}/update`}>Update</NavLink>
                 <NavLink to={`/pdca/${id}/delete`}>Delete</NavLink>
-                <NavLink to={'/'}>戻る</NavLink>
+                <NavLink to={'/'}>Back</NavLink>
             </div>
         </div>
     );

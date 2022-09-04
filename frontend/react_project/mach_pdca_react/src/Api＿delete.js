@@ -35,6 +35,6 @@ function ApiDelete() {
             <button onClick={deletePdca}>Delete</button>
         </div>
     )
-
 }
+
 export default ApiDelete;

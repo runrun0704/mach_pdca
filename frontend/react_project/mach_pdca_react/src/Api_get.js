@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Link, Routes,Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {baseURL} from './baseURL';
 
@@ -49,6 +49,6 @@ function ApiGet() {
             </div>
         </div>
     )
-
 }
+
 export default ApiGet;

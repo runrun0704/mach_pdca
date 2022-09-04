@@ -63,7 +63,6 @@ function ApiPut() {
 
     }
 
-
     return(
         <div>
             <h2>Api_Put</h2>
@@ -171,6 +170,6 @@ function ApiPut() {
             </form>
         </div>
     )
-
 }
+
 export default ApiPut;
