@@ -166,7 +166,7 @@ function ApiPut() {
                     onChange={handleChange}
                 />
                 </li>
-                <button type="submit">Create</button>
+                <button type="submit">Update</button>
             </form>
         </div>
     )
