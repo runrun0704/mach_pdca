@@ -91,7 +91,7 @@ function ApiPost() {
                     onChange={handleChange}
                 />
                 </li>
-                <button type="submit">Submit</button>
+                <button type="submit">Update</button>
             </form>
         </div>
     )
