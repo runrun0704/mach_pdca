@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
-
+import {baseURL} from './baseURL';
 
 function ApiPost() {
     const [pdca,setPdcaes] = useState({
@@ -32,7 +32,7 @@ function ApiPost() {
             weight: pdca.weight,
             deadline: pdca.deadline
         };
-        axios.post('http://localhost:8000/api/pdcaes/',pdcaData)
+        axios.post(`${baseURL}`,pdcaData)
         .then(res => {
             setPdcaes(res.data)
         })

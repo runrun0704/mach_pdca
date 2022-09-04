@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Routes,Route} from 'react-router-dom';
 import axios from 'axios';
-
+import {baseURL} from './baseURL';
 
 function ApiGet() {
     const [pdca,setPdcaes] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:8000/api/pdcaes')
+        axios.get(`${baseURL}`)
         .then(res => {
             setPdcaes(res.data)
         })
