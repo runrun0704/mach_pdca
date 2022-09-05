@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.views.generic import TemplateView
 import django_filters
 from rest_framework import viewsets, filters
-from .models import PdcaModel,User,Condition,Tag
+from .models import PdcaModel,User,Tag
 from .serializer import PdcaModelSerializer, UserSerializer
 
 # Create your views here.
