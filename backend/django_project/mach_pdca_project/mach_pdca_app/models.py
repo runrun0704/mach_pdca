@@ -32,7 +32,7 @@ CONDITION = (
     (3, 'Close')
 )
 
-class PdcaModel(models.Model):
+class Pdca(models.Model):
     id = models.AutoField(primary_key = True)
     created = models.DateTimeField(auto_now = True)
     updated = models.DateTimeField(auto_now_add = True)
