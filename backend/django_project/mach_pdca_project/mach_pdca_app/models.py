@@ -12,19 +12,6 @@ class User(models.Model):
     def __str__(self):
         return self.name
 
-CONDITION = (
-    (1, 'Preparation'),
-    (2, 'Open'),
-    (3, 'Close')
-)
-
-class Condition(models.Model):
-    id = models.AutoField(primary_key = True)
-    condition = models.IntegerField(choices = CONDITION,null = True, blank = True)
-
-    def __str__(self):
-        return str(self.condition)
-
 class Tag(models.Model):
     id = models.AutoField(primary_key = True)
     created = models.DateTimeField(auto_now = True)
@@ -39,7 +26,13 @@ LEVEL = (
     (3, 'Heavy')
 )
 
-class PdcaModel(models.Model):
+CONDITION = (
+    (1, 'Preparation'),
+    (2, 'Open'),
+    (3, 'Close')
+)
+
+class Pdca(models.Model):
     id = models.AutoField(primary_key = True)
     created = models.DateTimeField(auto_now = True)
     updated = models.DateTimeField(auto_now_add = True)
@@ -53,6 +46,6 @@ class PdcaModel(models.Model):
     a = models.TextField(null = True)
     weight = models.IntegerField(choices = LEVEL, null = True)
     comment = models.TextField(null = True)
-    condition = models.ForeignKey(Condition, on_delete = models.CASCADE ,blank = True ,default = "", null = True)
+    condition = models.IntegerField(choices = CONDITION, blank = True ,default = "", null = True)
     tag_name = models.ManyToManyField(Tag, blank = True, default = "", null = True)
     user_name = models.ForeignKey(User, on_delete = models.CASCADE, blank = True, default = "", null = True)

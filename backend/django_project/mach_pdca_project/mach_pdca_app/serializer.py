@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import PdcaModel,User,Condition,Tag
+from .models import Pdca,User,Tag
 
-class PdcaModelSerializer(serializers.ModelSerializer):
+class PdcaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = PdcaModel
+        model = Pdca
         fields = ('p','d','c','a','title','goal','deadline','weight','comment','condition','tag_name','user_name','created','updated','id')
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id', 'name')    
+        fields = ('id', 'name')
